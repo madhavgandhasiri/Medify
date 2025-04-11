@@ -1,0 +1,45 @@
+.navbarContainer{
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background : linear-gradient(to right, #E7F0FF, #E8F1FF);
+  position: absolute;
+  top: 2rem;
+}
+
+.navbarLogoDiv{
+  display: flex;
+  height: 1.7rem;
+  width: 5.7rem;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+
+.navbarLogoDiv p{
+  font-weight: bolder;
+  color: var(--color-primary);
+}
+
+.navbarLinksDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem
+}
+
+.navbarLinksDiv a{
+  font-weight: 450;
+  text-decoration: none;
+  color: black;
+  height: 5rem;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.navbarLinksDiv a:hover{
+  color: var(--color-primary);
+  border-bottom: 0.5rem solid var(--color-primary);
+}
