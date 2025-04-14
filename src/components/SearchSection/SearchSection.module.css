@@ -1,0 +1,72 @@
+.SearchContainer {
+  background-color: #FFFFFF;
+  position: absolute;
+  z-index: 10;
+  top: 32rem;
+  width: 80%;
+  height: 25rem;
+  border-radius: 15px;
+  box-shadow: 6px 6px 35px 0px #1028511C;
+}
+
+.SearchContainerUpperDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.inputState,
+.inputCity {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  padding-top: 2.5rem;
+  position: relative;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 10rem;
+  font-size: 18px;
+  color: #888;
+  pointer-events: none;
+}
+
+.searchIconForCity{
+  position: absolute;
+  left: 3.5rem;
+  font-size: 18px;
+  color: #888;
+  pointer-events: none;
+}
+
+.inputBox {
+  width: 40%;
+  padding: 10px 10px 10px 35px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.SearchContainerUpperDiv input{
+  border: 1px solid #F0F0F0;
+  border-radius: 5px;
+}
+
+.SearchContainerLowerDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2.5rem;
+}
+.SearchContainerLowerDiv p{
+  color: #102851;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.searchCardDiv{
+  display: flex;
+  padding-top: 2rem;
+  gap:2rem;
+}

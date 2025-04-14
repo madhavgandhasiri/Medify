@@ -1,6 +1,41 @@
 .HeroSectionContainer{
+  position: absolute;
+  top: 7rem;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 3rem 8rem;
+  background : linear-gradient(to right, #E7F0FF, #E8F1FF);
+}
+
+.HeroSectionTextDiv{
   display: flex;
   flex-direction: column;
-  background-color: aqua;
-  height: 50%;
+  padding-top: 4rem;
+}
+
+.HeroSectionTextDiv h4{
+font-size: 2rem;
+font-weight: 500;
+}
+
+.HeroSectionTextDiv h1{
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.HeroSectionTextDiv span{
+  color: var(--color-primary);
+}
+
+.HeroSectionTextDiv p{
+  color: #5C6169;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.HeroSectionButton{
+  margin-top: 2rem;
 }

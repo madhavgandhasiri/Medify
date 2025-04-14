@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Button.module.css";
 
-function Button({ width }) {
+function Button({ text, width }) {
   return (
     <div className={styles.buttonDiv}>
       <button
@@ -9,7 +9,7 @@ function Button({ width }) {
           width: width,
         }}
       >
-        My Bookings
+        {text}
       </button>
     </div>
   );

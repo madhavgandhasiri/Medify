@@ -17,7 +17,7 @@ function Navbar(){
         <a href="/">Surgery</a>
         <a href="/">Software For Provider</a>
         <a href="/">Facilities</a>
-        <Button width = "8rem"/>
+        <Button text="My Bookings" width = "8rem"/>
       </div>
     </div>
   )

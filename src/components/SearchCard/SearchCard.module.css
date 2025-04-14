@@ -1,0 +1,22 @@
+.searchCardContainer{
+background-color: #FAFBFE;
+border-radius: 8px;
+display: flex;
+align-items: center;
+flex-direction: column;
+padding: 1rem;
+height: 8rem;
+width: 10rem;
+}
+
+.searchCardContainer img{
+height: 4rem;
+width: 4rem;
+}
+
+.searchCardContainer:hover{
+  background: #2AA7FF14;
+  border: 1px solid var(--color-primary);
+  cursor: pointer;
+
+}
