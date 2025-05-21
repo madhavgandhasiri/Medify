@@ -1,10 +1,19 @@
 .SearchContainer {
   background-color: #FFFFFF;
-  position: absolute;
   z-index: 10;
-  top: 32rem;
+  margin-top: 20rem;
   width: 80%;
-  height: 25rem;
+  height: 26rem;
+  border-radius: 15px;
+  box-shadow: 6px 6px 35px 0px #1028511C;
+}
+
+.SearchContainerCardSelected {
+  background-color: #FFFFFF;
+  z-index: 10;
+  margin-top: -3rem;
+  width: 80%;
+  height: 7rem;
   border-radius: 15px;
   box-shadow: 6px 6px 35px 0px #1028511C;
 }

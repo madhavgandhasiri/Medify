@@ -18,9 +18,11 @@
   gap: 2px;
 }
 
-.navbarLogoDiv p{
+.logoText{
   font-weight: bolder;
   color: var(--color-primary);
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .navbarLinksDiv{

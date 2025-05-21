@@ -1,0 +1,53 @@
+.discountsContainer {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 2rem;
+  height: 15rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carouselViewport {
+  width: 100%;
+  max-width: 60rem;
+  overflow: hidden;
+}
+
+.carouselTrack {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  display: flex;
+  flex-shrink: 0;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.discountImg {
+  height: 11rem;
+  width: 30%;
+  object-fit: contain;
+}
+
+.dotsDiv {
+  display: flex;
+  gap: 1rem;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #BCD8E9;
+  transition: background-color 0.3s ease;
+}
+
+.active {
+  background-color: var(--color-primary);
+}

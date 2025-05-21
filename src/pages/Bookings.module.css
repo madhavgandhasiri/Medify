@@ -1,0 +1,11 @@
+.BookingsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.BookingCardsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

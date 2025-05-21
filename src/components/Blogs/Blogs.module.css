@@ -1,0 +1,59 @@
+.BlogContainer {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.blogCardContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.blogCard {
+  width: 20rem;
+  border: 1px solid #00000012;
+  border-radius: 8px;
+}
+
+.blogCard img {
+  height: 18rem;
+  width: 100%;
+}
+
+.blogInfDiv {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.topic {
+  font-weight: 500;
+  font-size: 17px;
+  color: #77829d;
+  display: flex;
+  gap: 1rem;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 18px;
+  color: #1b3c74;
+}
+
+.authorImgDiv {
+  display: flex;
+  gap: 0.5rem;
+}
+.authorImgDiv img {
+  height: 2rem;
+  width: 2rem;
+}
+
+.authorImgDiv p {
+  font-weight: 500;
+  font-size: 17px;
+  color: #1b3c74;
+}

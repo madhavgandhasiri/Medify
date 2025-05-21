@@ -14,9 +14,9 @@ height: 4rem;
 width: 4rem;
 }
 
-.searchCardContainer:hover{
+.searchCardContainer:hover,
+.searchCardContainer.active {
   background: #2AA7FF14;
   border: 1px solid var(--color-primary);
   cursor: pointer;
-
 }

@@ -1,0 +1,22 @@
+.SpecializationContainer{
+  background: linear-gradient(to right, #E7F0FF, #E8F1FF);
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 0rem;
+  gap: 2rem;
+}
+
+.SpecializationContainer h1 {
+  color: #1B3C74;
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+.cardDiv {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}

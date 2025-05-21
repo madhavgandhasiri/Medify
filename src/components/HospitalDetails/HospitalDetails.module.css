@@ -1,0 +1,140 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+  background: linear-gradient(to right, #e7f0ff, #e8f1ff);
+  width: 40rem;
+  height: 100%;
+  justify-content: space-between;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.upperDiv {
+  display: flex;
+  gap: 2rem;
+}
+
+.imgDiv {
+  display: flex;
+  width: 10%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hospitalIcon {
+  width: 6rem;
+}
+
+.infoDiv {
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hospitalName {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.cityName {
+  font-weight: 700;
+  font-size: 14px;
+  color: #414146;
+}
+
+.desc,
+.fee {
+  font-weight: 400;
+  font-size: 14px;
+  color: #414146;
+}
+
+.free,
+.avaliable {
+  color: #00a500;
+}
+
+.bookingDiv {
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.like {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #00a500;
+  width: 3rem;
+  border-radius: 2px;
+}
+
+.lowerDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.datesDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 35rem;
+}
+
+.arrowButton{
+  color: var(--color-primary);
+  padding: 1rem;
+  border: 1px solid rgb(220, 211, 211);
+  border-radius: 50% 50%;
+  background: linear-gradient(to right, #e7f0ff, #e8f1ff);
+  cursor: pointer;;
+}
+
+.selectDateDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20rem;
+  border-bottom: 5px solid rgb(201, 193, 193);
+}
+
+.selectDateDiv:hover,
+.selectDateDiv.active {
+  border-bottom: 5px solid #2aa8ff;
+}
+
+.morningDiv,
+.afternoonDiv,
+.eveningDiv {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  width: 100%;
+  height: 3rem;
+  border-bottom: 1px solid rgb(227, 222, 222);
+}
+
+.morningDiv {
+  gap: 2rem;
+  margin-top: 1rem;
+}
+.afternoonDiv{
+  gap: 2rem;
+}
+.eveningDiv{
+  gap: 2rem;
+  border-bottom: none;
+}
