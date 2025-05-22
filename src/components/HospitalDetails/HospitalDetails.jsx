@@ -33,9 +33,9 @@ function HospitalDetails({ center }) {
       options.push({
         label,
         slots: {
-          morning: ["09:00 AM", "10:00 AM", "11:30 AM"],
-          afternoon: ["12:00 PM", "12:30 PM", "01:00 PM", "01:30 PM", "02:00 PM"],
-          evening: ["04:00 PM", "05:30 PM", "06:00 PM", "06:30 PM"]
+          Morning: ["09:00 AM", "10:00 AM", "11:30 AM"],
+          Afternoon: ["12:00 PM", "12:30 PM", "01:00 PM", "01:30 PM", "02:00 PM"],
+          Evening: ["04:00 PM", "05:30 PM", "06:00 PM", "06:30 PM"]
         }
       });
     }
@@ -45,6 +45,9 @@ function HospitalDetails({ center }) {
 
   function handleBookingCenter() {
     setOnSelect(!onSelect);
+      if (!onSelect) {
+    setSelectedDateIndex(0);
+  }
   }
 
   function handleTimeSelection(time) {
@@ -58,9 +61,9 @@ function HospitalDetails({ center }) {
       time: time
     };
 
-    const existingBookings = JSON.parse(localStorage.getItem("myBookings")) || [];
+    const existingBookings = JSON.parse(localStorage.getItem("bookings")) || [];
     existingBookings.push(bookingDetails);
-    localStorage.setItem("myBookings", JSON.stringify(existingBookings));
+    localStorage.setItem("bookings", JSON.stringify(existingBookings));
 
     alert(`Booked ${bookingDetails.hospitalName} on ${bookingDetails.date} at ${bookingDetails.time}`);
   }
@@ -98,7 +101,7 @@ function HospitalDetails({ center }) {
           <img className={styles.hospitalIcon} src={centerImg} alt="center" />
         </div>
         <div className={styles.infoDiv}>
-          <span className={styles.hospitalName}>{center["Hospital Name"]}</span>
+          <h3 className={styles.hospitalName}>{center["Hospital Name"]}</h3>
           <span className={styles.cityName}>
             {center.City}, {center.State}
           </span>
@@ -142,7 +145,7 @@ function HospitalDetails({ center }) {
 
           {selectedDateIndex !== null && (
             <>
-              {["morning", "afternoon", "evening"].map((period) => (
+              {["Morning", "Afternoon", "Evening"].map((period) => (
                 <div key={period} className={styles[`${period}Div`]}>
                   <p style={{ minWidth: "5rem", textTransform: "capitalize" }}>{period}</p>
                   {dateOptions[selectedDateIndex].slots[period].map((time, i) => {

@@ -26,9 +26,9 @@ function BookingCard({ bookings }) {
               />
             </div>
             <div className={styles.infoDiv}>
-              <span className={styles.hospitalName}>
-                {booking.hospitalName}
-              </span>
+              <h3 className={styles.hospitalName}>
+                {booking.hospital}
+              </h3>
               <span className={styles.cityName}>
                 {booking.city}, {booking.state}
               </span>

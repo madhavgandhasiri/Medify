@@ -116,9 +116,9 @@
   border-bottom: 5px solid #2aa8ff;
 }
 
-.morningDiv,
-.afternoonDiv,
-.eveningDiv {
+.MorningDiv,
+.AfternoonDiv,
+.EveningDiv {
   display: flex;
   align-items: start;
   justify-content: start;
@@ -127,14 +127,14 @@
   border-bottom: 1px solid rgb(227, 222, 222);
 }
 
-.morningDiv {
+.MorningDiv {
   gap: 2rem;
   margin-top: 1rem;
 }
-.afternoonDiv{
+.AfternoonDiv{
   gap: 2rem;
 }
-.eveningDiv{
+.EveningDiv{
   gap: 2rem;
   border-bottom: none;
 }

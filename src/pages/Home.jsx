@@ -12,15 +12,68 @@ import FamilySection from "../components/FamilySection/FamilySection";
 import Faqs from "../components/Faqs/Faqs";
 import DownloadApp from "../components/DownloadApp/DownloadApp";
 import Footer from "../components/Footer/Footer";
+import HospitalDetails from "../components/HospitalDetails/HospitalDetails";
+import LimitedOffer from "../components/LimitedOffer/LimitedOffer";
 
 function Home() {
-const [selectedCard, setSelectedCard] = useState(null);
+  const [medicalCenters, setMedicalCenters] = useState([]);
+  const [selectedCity, setSelectedCity] = useState("");
+  const [hasSearched, setHasSearched] = useState(false);
+
+
+   if (medicalCenters.length > 0) {
+    return (
+      <div className={styles.HomeContainer}>
+        <HeaderSection />
+        <SearchSection
+          setMedicalCenters={setMedicalCenters}
+          setSelectedCity={setSelectedCity}
+          selectedCity={selectedCity}
+          medicalCenters={medicalCenters}
+          hasSearched={hasSearched}
+          setHasSearched={setHasSearched}
+        />
+              {medicalCenters.length > 0 && (
+        <>
+          <div className={styles.detailsContainer}>
+            <div className={styles.detailsUpperDiv}>
+              <h1 className={styles.centersAvailableTitle}>
+                {medicalCenters.length} medical centers available in {selectedCity}
+              </h1>
+              <p className={styles.bookAppointmentTitle}>
+                Book appointments with minimum wait-time & verified doctor details
+              </p>
+            </div>
+            <div className={styles.detailsLowerDiv}>
+              <div className={styles.HospitalDetailsCardDiv}>
+                {medicalCenters.map((center, index) => (
+                  <HospitalDetails key={index} center={center} />
+                ))}
+              </div>
+              <LimitedOffer />
+            </div>
+          </div>
+        </>
+      )}
+        <Faqs />
+        <DownloadApp />
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className={styles.HomeContainer}>
       <HeaderSection />
       <HeroSection />
-      <SearchSection selectedCard={selectedCard} setSelectedCard={setSelectedCard} />
+      <SearchSection
+        setMedicalCenters={setMedicalCenters}
+        setSelectedCity={setSelectedCity}
+        selectedCity={selectedCity}
+        medicalCenters={medicalCenters}
+        hasSearched={hasSearched}
+        setHasSearched={setHasSearched}
+      />
       <Discounts />
       <Specialization />
       <Specialist />

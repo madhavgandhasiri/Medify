@@ -10,14 +10,15 @@ function Bookings() {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    const savedBookings = JSON.parse(localStorage.getItem("myBookings")) || [];
+    const savedBookings = JSON.parse(localStorage.getItem("bookings")) || [];
     setBookings(savedBookings);
   }, []);
 
   return (
     <div className={styles.BookingsContainer}>
       <HeaderSection />
-      <h2>My Bookings</h2>
+      <br />
+      <h1>My Bookings</h1>
 
       <div style={{ display: "flex", flexDirection: "row", gap: "2rem" }}>
         <div className={styles.BookingCardsContainer}>

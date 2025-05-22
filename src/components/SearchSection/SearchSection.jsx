@@ -10,6 +10,8 @@ function SearchSection({
   setMedicalCenters,
   setSelectedCity,
   selectedCity,
+  hasSearched,
+  setHasSearched,
   selectedCard,
   setSelectedCard,
 }) {
@@ -18,8 +20,7 @@ function SearchSection({
   const [selectedState, setSelectedState] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
-    const [fromCardSelection, setFromCardSelection] = useState(false);
-
+  const [fromCardSelection, setFromCardSelection] = useState(false);
 
   useEffect(() => {
     if (location.state?.fromCardSelection) {
@@ -29,10 +30,6 @@ function SearchSection({
 
   useEffect(() => {
     const fetchStates = async () => {
-      if (!selectedCard && !fromCardSelection) {
-        setStates([]);
-        return;
-      }
       try {
         const res = await axios.get(
           "https://meddata-backend.onrender.com/states"
@@ -44,7 +41,7 @@ function SearchSection({
     };
 
     fetchStates();
-  }, [selectedCard, fromCardSelection]);
+  }, []);
 
   useEffect(() => {
     const fetchCities = async () => {
@@ -72,6 +69,7 @@ function SearchSection({
     }
     const url = `https://meddata-backend.onrender.com/data?state=${selectedState}&city=${selectedCity}`;
     try {
+      setHasSearched(true);
       const res = await axios.get(url);
       setMedicalCenters(res.data);
     } catch (err) {
@@ -87,15 +85,14 @@ function SearchSection({
   return (
     <div
       className={`${styles.SearchContainer} ${
-        fromCardSelection ? styles.SearchContainerCardSelected : ""
+        hasSearched ? styles.SearchContainerCardSelected : ""
       }`}
     >
       <div className={styles.SearchContainerUpperDiv}>
-        <div className={styles.inputState}>
+        <div id="state" className={styles.inputState}>
           <select
             className={styles.inputBox}
             value={selectedState}
-            disabled={!selectedCard && !fromCardSelection}
             onChange={(e) => {
               setSelectedState(e.target.value);
               setSelectedCity("");
@@ -109,7 +106,7 @@ function SearchSection({
             ))}
           </select>
         </div>
-        <div className={styles.inputCity}>
+        <div id="city" className={styles.inputCity}>
           <IoMdSearch className={styles.searchIconForCity} />
           <select
             className={styles.inputBox}
@@ -124,10 +121,17 @@ function SearchSection({
               </option>
             ))}
           </select>
-          <Button text="Search" width="7.5rem" onClick={handleSearch}></Button>
+          <Button 
+          text="Search" 
+          width="7.5rem" 
+          onClick={handleSearch}
+          type="submit" 
+          id="searchBtn"
+          >
+          </Button>
         </div>
       </div>
-      {!fromCardSelection && (
+      {!fromCardSelection && !hasSearched && (
         <div className={styles.SearchContainerLowerDiv}>
           <p>You may be looking for</p>
           <div className={styles.searchCardDiv}>
