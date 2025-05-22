@@ -65,7 +65,7 @@ function HospitalDetails({ center }) {
     existingBookings.push(bookingDetails);
     localStorage.setItem("bookings", JSON.stringify(existingBookings));
 
-    alert(`Booked ${bookingDetails.hospitalName} on ${bookingDetails.date} at ${bookingDetails.time}`);
+    // alert(`Booked ${bookingDetails.hospitalName} on ${bookingDetails.date} at ${bookingDetails.time}`);
   }
 
   function isPastTime(slotTime, label) {
