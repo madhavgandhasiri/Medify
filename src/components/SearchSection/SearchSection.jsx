@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./SearchSection.module.css";
 import Button from "../Button/Button";
-import { IoMdSearch } from "react-icons/io";
 import SearchCard from "../SearchCard/SearchCard";
 import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -21,6 +20,8 @@ function SearchSection({
   const navigate = useNavigate();
   const location = useLocation();
   const [fromCardSelection, setFromCardSelection] = useState(false);
+  const [showStateDropdown, setShowStateDropdown] = useState(false);
+  const [showCityDropdown, setShowCityDropdown] = useState(false);
 
   useEffect(() => {
     if (location.state?.fromCardSelection) {
@@ -90,45 +91,63 @@ function SearchSection({
     >
       <div className={styles.SearchContainerUpperDiv}>
         <div id="state" className={styles.inputState}>
-          <select
-            className={styles.inputBox}
-            value={selectedState}
-            onChange={(e) => {
-              setSelectedState(e.target.value);
-              setSelectedCity("");
-            }}
-          >
-            <option value="">Select State</option>
-            {states.map((state) => (
-              <option key={state} value={state}>
-                {state}
-              </option>
-            ))}
-          </select>
+          <div id="state" className={styles.customDropdown}>
+            <div
+              onClick={() => setShowStateDropdown(!showStateDropdown)}
+              className={styles.inputBox}
+            >
+              {selectedState || "Select State"}
+            </div>
+            {showStateDropdown && (
+              <ul className={styles.dropdownList}>
+                {states.map((state) => (
+                  <li
+                    key={state}
+                    onClick={() => {
+                      setSelectedState(state);
+                      setSelectedCity("");
+                      setShowStateDropdown(false);
+                    }}
+                  >
+                    {state}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
         <div id="city" className={styles.inputCity}>
-          <IoMdSearch className={styles.searchIconForCity} />
-          <select
-            className={styles.inputBox}
-            value={selectedCity}
-            onChange={(e) => setSelectedCity(e.target.value)}
-            // disabled={!selectedState}
-          >
-            <option value="">Select City</option>
-            {cities.map((city) => (
-              <option key={city} value={city}>
-                {city}
-              </option>
-            ))}
-          </select>
-          <Button 
-          text="Search" 
-          width="7.5rem" 
-          onClick={handleSearch}
-          type="submit" 
-          id="searchBtn"
-          >
-          </Button>
+          <div id="city" className={styles.customDropdown}>
+            <div
+              onClick={() => setShowCityDropdown(!showCityDropdown)}
+              className={styles.inputBox}
+            >
+              {selectedCity || "Select City"}
+            </div>
+            {showCityDropdown && (
+              <ul className={styles.dropdownList}>
+                {cities.map((city) => (
+                  <li
+                    key={city}
+                    onClick={() => {
+                      setSelectedCity(city);
+                      setShowCityDropdown(false);
+                    }}
+                  >
+                    {city}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
+          <Button
+            text="Search"
+            width="7.5rem"
+            onClick={handleSearch}
+            type="submit"
+            id="searchBtn"
+          ></Button>
         </div>
       </div>
       {!fromCardSelection && !hasSearched && (
