@@ -45,10 +45,10 @@ function SearchSection({
 
   useEffect(() => {
     const fetchCities = async () => {
-      if (!selectedState) {
-        setCities([]);
-        return;
-      }
+      // if (!selectedState) {
+      //   setCities([]);
+      //   return;
+      // }
       try {
         const res = await axios.get(
           `https://meddata-backend.onrender.com/cities/${selectedState}`
@@ -112,7 +112,7 @@ function SearchSection({
             className={styles.inputBox}
             value={selectedCity}
             onChange={(e) => setSelectedCity(e.target.value)}
-            disabled={!selectedState}
+            // disabled={!selectedState}
           >
             <option value="">Select City</option>
             {cities.map((city) => (

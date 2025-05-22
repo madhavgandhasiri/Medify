@@ -35,6 +35,7 @@ function Home() {
         />
               {medicalCenters.length > 0 && (
         <>
+        <br />
           <div className={styles.detailsContainer}>
             <div className={styles.detailsUpperDiv}>
               <h1 className={styles.centersAvailableTitle}>
