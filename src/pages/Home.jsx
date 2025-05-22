@@ -23,7 +23,7 @@ function Home() {
 
   useEffect(() => {
   if (medicalCenters.length > 0 && resultSectionRef.current) {
-     resultSectionRef.current.scrollIntoView({ behavior: "smooth" });
+     resultSectionRef.current.scrollIntoView({ behavior: "auto" });
   }
 }, [medicalCenters]);
 
