@@ -39,7 +39,7 @@ function Home() {
           <div className={styles.detailsContainer}>
             <div className={styles.detailsUpperDiv}>
               <h1 className={styles.centersAvailableTitle}>
-                {medicalCenters.length} medical centers available in {selectedCity}
+                  {medicalCenters.length} medical centers available in {selectedCity.toLowerCase()}
               </h1>
               <p className={styles.bookAppointmentTitle}>
                 Book appointments with minimum wait-time & verified doctor details
