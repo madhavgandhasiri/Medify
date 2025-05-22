@@ -27,21 +27,21 @@ function BookingCard({ bookings }) {
             </div>
             <div className={styles.infoDiv}>
               <h3 className={styles.hospitalName}>
-                {booking.hospitalName}
+                {booking["Hospital Name"]}
               </h3>
               <span className={styles.cityName}>
-                {booking.city}, {booking.state}
+                {booking.City}, {booking.State}
               </span>
               <span className={styles.desc}>{booking.hospitalType}</span>
               <br />
               <span className={styles.like}>
-                <BiSolidLike /> 5
+                <BiSolidLike /> {booking["Hospital overall rating"]}
               </span>
             </div>
             <div className={styles.bookingDiv}>
-              <TimeBox time={booking.time} />
+              <TimeBox time={booking.bookingTime} />
               <div className={styles.dateBox}>
-                <p>{booking.date}</p>
+                <p>{booking.bookingDate}</p>
               </div>
             </div>
           </div>

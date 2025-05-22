@@ -53,12 +53,12 @@ function HospitalDetails({ center }) {
   function handleTimeSelection(time) {
     const selectedDate = dateOptions[selectedDateIndex];
     const bookingDetails = {
-      hospitalName: center["Hospital Name"],
-      city: center.City,
-      state: center.State,
-      hospitalType: center["Hospital Type"],
-      date: selectedDate.label,
-      time: time
+      "Hospital Name": center["Hospital Name"],
+      City: center.City,
+      State: center.State,
+      "Hospital overall rating": center["Hospital overall rating"],
+      bookingDate: selectedDate.label,
+      bookingTime: time
     };
 
     const existingBookings = JSON.parse(localStorage.getItem("bookings")) || [];
