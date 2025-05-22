@@ -90,9 +90,10 @@ function SearchSection({
       }`}
     >
       <div className={styles.SearchContainerUpperDiv}>
-        <div id="state" className={styles.inputState}>
-          <div id="state" className={styles.customDropdown}>
+        <div className={styles.inputState}>
+          <div className={styles.customDropdown}>
             <div
+              id="state"
               onClick={() => setShowStateDropdown(!showStateDropdown)}
               className={styles.inputBox}
             >
@@ -116,9 +117,10 @@ function SearchSection({
             )}
           </div>
         </div>
-        <div id="city" className={styles.inputCity}>
-          <div id="city" className={styles.customDropdown}>
+        <div className={styles.inputCity}>
+          <div className={styles.customDropdown}>
             <div
+              id="city"
               onClick={() => setShowCityDropdown(!showCityDropdown)}
               className={styles.inputBox}
             >
