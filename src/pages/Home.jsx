@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import HeaderSection from "../components/HeaderSection/HeaderSection";
 import HeroSection from "../components/HeroSection/HeroSection";
 import styles from "./Home.module.css";
@@ -19,6 +19,13 @@ function Home() {
   const [medicalCenters, setMedicalCenters] = useState([]);
   const [selectedCity, setSelectedCity] = useState("");
   const [hasSearched, setHasSearched] = useState(false);
+   const resultSectionRef = useRef(null);
+
+  useEffect(() => {
+  if (medicalCenters.length > 0 && resultSectionRef.current) {
+     resultSectionRef.current.scrollIntoView({ behavior: "smooth" });
+  }
+}, [medicalCenters]);
 
 
    if (medicalCenters.length > 0) {
@@ -33,10 +40,10 @@ function Home() {
           hasSearched={hasSearched}
           setHasSearched={setHasSearched}
         />
-              {medicalCenters.length > 0 && (
+        {medicalCenters.length > 0 && (
         <>
         <br />
-          <div className={styles.detailsContainer}>
+          <div className={styles.detailsContainer} ref={resultSectionRef}>
             <div className={styles.detailsUpperDiv}>
               <h1 className={styles.centersAvailableTitle}>
                   {medicalCenters.length} medical centers available in {selectedCity.toLowerCase()}
